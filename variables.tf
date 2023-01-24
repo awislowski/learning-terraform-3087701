@@ -7,8 +7,8 @@ variable "ami_filter"{
   description = "Name filter and owner for AMI"
 
   type = object({
-    name = "string"
-    owner = "string"
+    name = string
+    owner = string
   })
 
   default = {
