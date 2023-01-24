@@ -31,3 +31,14 @@ variable "environment" {
   }
 }
 
+variable "asg_min_size" {
+  description = "Minimal number of instances in the ASG"
+  default = 1
+}
+
+variable "asg_max_size" {
+  description = "Maximal number of instances in the ASG"
+  default = 2
+}
+
+
