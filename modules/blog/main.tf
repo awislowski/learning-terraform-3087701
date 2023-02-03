@@ -14,9 +14,9 @@ data "aws_ami" "app_ami" {
   owners = [var.ami_filter.owner]
 }
 
-module "autoscaling" {
+module "blog_autoscaling" {
   source  = "terraform-aws-modules/autoscaling/aws"
-  version = "6.7.0"
+  version = "6.5.2"
  
  
   name = "${var.environment.name}-blog"
@@ -66,7 +66,7 @@ module "blog_alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "~> 8.0"
 
-  name = "blog-alb"
+  name = "${var.environment.name}-blog-alb"
 
   load_balancer_type = "application"
 
